@@ -1,0 +1,39 @@
+package br.inatel.labs.lab_rest_server.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import br.inatel.labs.lab_rest_server.model.Curso;
+
+/**
+ * 
+ * Serviço com método de negócio para curso
+ * @author Projetinho
+ * 
+ * @since 10/09/2022
+ *
+ */
+
+@Service
+public class CursoService {
+	private List<Curso> listaCurso = new ArrayList<>();
+	
+	@PostConstruct 
+	private void setUp() {
+		Curso c1 = new Curso(1L, "Rest com SpringBoot", 20);
+		Curso c2 = new Curso(2L, "Programação Java 11", 80);
+		Curso c3 = new Curso(3L, "Dominando a IDE Eclipse", 120);
+		
+		listaCurso.add(c1);
+		listaCurso.add(c2);
+		listaCurso.add(c3);
+	}
+	
+	public List<Curso> pesquisarCurso(){
+		return listaCurso;
+	}
+}

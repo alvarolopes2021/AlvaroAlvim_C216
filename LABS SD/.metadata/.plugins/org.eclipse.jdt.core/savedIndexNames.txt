@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\Projetinho\Desktop\INATEL\P10\C216\LABS SD\.metadata\.plugins\org.eclipse.jdt.core
+895006588.index
+1714815005.index
+4213166526.index

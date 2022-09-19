@@ -1,0 +1,9 @@
+package br.inatel.labs.labrest.client;
+
+public class WebClientGetCurso {
+	
+	public static void main(String[] args) {
+		List<Curso> listaCurso = 
+	}
+
+}
