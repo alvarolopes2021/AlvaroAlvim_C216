@@ -1,3 +1,5 @@
 /MATERIAL DE AULA
 *.zip
+.metadata
+/.metadata
 /.metadata/
