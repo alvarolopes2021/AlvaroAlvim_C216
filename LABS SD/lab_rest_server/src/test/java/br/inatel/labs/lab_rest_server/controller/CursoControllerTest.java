@@ -69,5 +69,37 @@ class CursoControllerTest {
 		assertNotNull(cursoResponse);
 		
 	}
+	
+	@Test
+	void dadoCursoAtualizado_quandoPutCurso_entaoRespondeComStatusAccepted() {
+		Curso curso = new Curso(4L,"Testando REST com Spring", 120 );
+		
+		webTestClient.put()
+		.uri("/curso/update")
+		.bodyValue(curso)
+		.exchange()
+		.expectStatus().isAccepted();		
+		
+	}
+	
+	@Test
+	void dadoCursoIdValido_quandoDeleteCurso_entaoRespondeComStatusNoContent() {
+		Long id = 2L;		
+
+		webTestClient.delete()
+		.uri("/curso/delete/" + id)
+		.exchange()
+		.expectStatus().isNoContent();			
+	}
+	
+	@Test
+	void dadoCursoIdInvalido_quandoDeleteCurso_entaoRespondeComStatusNoContent() {
+		Long id = 7L;		
+
+		webTestClient.delete()
+		.uri("/curso/delete/" + id)
+		.exchange()
+		.expectStatus().isNotFound();			
+	}
 
 }

@@ -54,7 +54,7 @@ public class CursoController {
 		service.updateCourse(curso);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable("id") Long id) {
 		Optional<Curso> curso = service.searchCourseById(id);
